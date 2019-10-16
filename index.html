@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<audio id="myVideo" width="320" height="240" src="example.mp3" controls>
+</audio>
+<br>
+
+<button onclick="hideSpeed()" type="button">HideSpeed</button>
+<button onclick="loveSpeed()" type="button">LoveSpeed</button>
+<input type="text" id="speed" disabled>
+<script>
+    var  speed=[0.5,0.75,1,1.25,1.5,1.75,2];
+    var cuppentSpeed=2;
+    var x = document.getElementById("myVideo");
+    var rate;
+    var i;
+
+    function getPlaySpeed() {
+        alert(x.playbackRate);
+    }
+
+    function setValue() {
+        document.getElementById("speed").value = rate;
+    }
+
+    function hideSpeed() {
+        rate = x.playbackRate;
+        rate = rate * 1.5;
+        x.playbackRate = rate;
+        setValue()
+    }
+
+    function loveSpeed() {
+        rate = x.playbackRate;
+        rate = rate * 0.5;
+        x.playbackRate = rate;
+        setValue()
+    }
+
+    function setPlaySpeed() {
+        x.playbackRate = 0.5;
+    }
+</script>
+
+</body>
+</html>
